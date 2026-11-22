@@ -1,0 +1,6 @@
+{
+  "name": "Monarch AI",
+  "description": "All-in-one AI assistant for chat, study tutoring, coding help, visual diagrams, and audio & text translation.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

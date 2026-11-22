@@ -1,0 +1,133 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.55);
+}
+
+/* Markdown prose polish */
+.ai-prose {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  word-break: break-word;
+}
+
+.ai-prose p {
+  margin-bottom: 0.75rem;
+}
+
+.ai-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.ai-prose ul,
+.ai-prose ol {
+  margin: 0.5rem 0 0.875rem 1.25rem;
+}
+
+.ai-prose ul {
+  list-style-type: disc;
+}
+
+.ai-prose ol {
+  list-style-type: decimal;
+}
+
+.ai-prose li {
+  margin-bottom: 0.3rem;
+}
+
+.ai-prose h1,
+.ai-prose h2,
+.ai-prose h3,
+.ai-prose h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin-top: 1.125rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.ai-prose h1 { font-size: 1.25rem; }
+.ai-prose h2 { font-size: 1.125rem; }
+.ai-prose h3 { font-size: 1rem; }
+
+.ai-prose blockquote {
+  border-left: 2px solid rgba(59, 130, 246, 0.45);
+  padding-left: 0.875rem;
+  margin: 0.75rem 0;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.ai-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.875rem 0;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ai-prose th,
+.ai-prose td {
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.ai-prose th {
+  font-weight: 600;
+  background: rgba(148, 163, 184, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
